@@ -1,0 +1,40 @@
+server:
+  port: 8855
+
+spring:
+  dubbo:
+    application:
+      name: server-provider
+    server: true
+    registry:
+      address: zookeeper://127.0.0.1:2181
+    protocol:
+      name: dubbo
+      port: 20880
+    scan: cn.wellcare
+  datasource:
+    druid:
+      type: com.alibaba.druid.pool.DruidDataSource
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://localhost:3306/mydubbo?serverTimezone=UTC
+      username: root
+      password: 123
+      # 连接池配置
+      initial-size: 5
+      min-idle: 5
+      max-active: 20
+      # 连接等待超时时间
+      max-wait: 30000
+      # 配置检测可以关闭的空闲连接间隔时间
+      time-between-eviction-runs-millis: 60000
+      # 配置连接在池中的最小生存时间
+      min-evictable-idle-time-millis: 300000
+
+mybatis:
+  type-aliases-package: cn.wellcare.model.*
+  mapper-locations: classpath:mapper/*.xml
+
+
+logging:
+  level:
+    cn.wellcare.provider.mapper : debug

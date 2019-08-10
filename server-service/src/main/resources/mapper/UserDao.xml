@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cn.wellcare.provider.mapper.UserDao">
+	<resultMap id="UserResult" type="cn.wellcare.model.User">
+			<result property="id" column="id" />
+			<result property="name" column="u_name" />
+
+	</resultMap>
+	
+	<select id="get" parameterType="Integer" resultMap="UserResult">
+		select
+			id,
+			u_name
+		from t_user
+		where
+			id = #{id}
+	</select>
+	
+	<select id="getCount" parameterType="java.util.Map"
+		resultType="java.lang.Integer">
+		select count(1) from t_user t1
+		<include refid="whereConditions" />
+	</select>
+	
+	<select id="getList" resultType="cn.wellcare.model.User">
+		select
+		id,
+		u_name
+		from t_user
+		<include refid="whereConditions" />
+	</select>
+	
+	<sql id="whereConditions">
+		where 1=1
+		<trim  suffixOverrides="," >
+			<if test="id != null and id !=''"  >
+				and id= #{id}
+			</if>
+			<if test="name != null and name !=''"  >
+				and u_name= #{name}
+			</if>
+		</trim>
+	</sql>
+	
+	<delete id="del">
+        delete from t_user where id = #{id}
+	</delete>
+
+	<insert id="save" parameterType="cn.wellcare.model.User">
+        insert into
+        t_user
+        (
+            id,
+			u_name
+        )
+        values
+        (
+            #{id},
+            #{name}
+
+        )
+    </insert>
+
+	
+</mapper>
