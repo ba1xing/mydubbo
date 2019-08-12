@@ -8,9 +8,9 @@
         <version>0.0.1-SNAPSHOT</version>
     </parent>
     <groupId>cn.wellcare</groupId>
-    <artifactId>server-provider</artifactId>
+    <artifactId>server-service</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>server-provider</name>
+    <name>server-service</name>
     <description>Demo project for Spring Boot</description>
 
     <properties>

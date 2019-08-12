@@ -10,7 +10,7 @@
     <groupId>cn.wellcare</groupId>
     <artifactId>server-api</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>api</name>
+    <name>server-api</name>
     <description>Demo project for Spring Boot</description>
 
     <properties>

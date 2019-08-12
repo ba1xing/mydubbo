@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="server-service" />
+        <module name="server-web" />
+        <module name="server-api" />
+        <module name="server-model" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="mydubbo" target="1.8" />
+      <module name="server-api" target="1.8" />
+      <module name="server-dao" target="1.8" />
+      <module name="server-model" target="1.8" />
+      <module name="server-service" target="1.8" />
+      <module name="server-web" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="mydubbo" options="-parameters" />
+      <module name="server-api" options="-parameters" />
+      <module name="server-dao" options="-parameters" />
+      <module name="server-model" options="-parameters" />
+      <module name="server-service" options="-parameters" />
+      <module name="server-web" options="-parameters" />
+    </option>
+  </component>
+</project>
